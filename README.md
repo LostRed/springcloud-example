@@ -25,7 +25,6 @@ springcloud-example
 └── springcloud-provider-zuul               // 用户访问的网关(10000)
 ```
 
-
 > 其中注册中心的域名eureka-server-01，eureka-server-02，eureka-server-03需要修改本地的hosts文件来模拟集群
 
 ## 使用组件的步骤
