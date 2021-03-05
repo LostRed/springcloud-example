@@ -1,0 +1,30 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: springcloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server-01:7001/eureka/,http://eureka-server-02:7002/eureka/,http://eureka-server-03:7003/eureka/
+  instance:
+    instance-id: springcloud-zuul
+    prefer-ip-address: true
+
+info:
+  app.name: springcloud-example
+  company.name: ylz
+
+zuul:
+  #虚拟访问路径需要加前缀
+  prefix: /springcloud
+  routes:
+    dept.serviceId: springcloud-provider
+    #虚拟路径
+    dept.path: /provider/**
+  #不能再使用这些路径访问了
+  #ignored-services: springcloud-provider
+  #表示隐藏全部的服务路径
+  ignored-services: "*"

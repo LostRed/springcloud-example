@@ -1,5 +1,6 @@
 package info.lostred.springcloud.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import info.lostred.springcloud.pojo.Dept;
 import info.lostred.springcloud.service.DeptService;
 import org.springframework.cloud.client.ServiceInstance;
@@ -23,12 +24,21 @@ public class DeptController {
     }
 
     @GetMapping("/dept/get/{id}")
+    @HystrixCommand(fallbackMethod = "hystrixQueryById")
     public Dept queryById(@PathVariable("id") Long id) {
         Dept dept = deptService.queryById(id);
         if (dept == null) {
             throw new RuntimeException("id=>" + id + "，不存在该部门，或者信息无法找到");
         }
         return dept;
+    }
+
+    //备选方法
+    public Dept hystrixQueryById(@PathVariable("id") Long id) {
+        return new Dept()
+                .setDeptNo(id)
+                .setDeptName("Hystrix：id=>" + id + "，不存在该部门，或者信息无法找到")
+                .setDbSource("不存在数据库");
     }
 
     @GetMapping("/dept/list")
@@ -45,10 +55,10 @@ public class DeptController {
         List<ServiceInstance> instances = client.getInstances("SPRINGCLOUD-PROVIDER-DEPT");
         for (ServiceInstance instance : instances) {
             System.out.println(
-                    instance.getHost()+"\t"+
-                    instance.getPort()+"\t"+
-                    instance.getUri()+"\t"+
-                    instance.getServiceId()
+                    instance.getHost() + "\t" +
+                            instance.getPort() + "\t" +
+                            instance.getUri() + "\t" +
+                            instance.getServiceId()
             );
         }
         return this.client;

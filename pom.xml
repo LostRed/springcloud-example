@@ -9,14 +9,17 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>springcloud-api</module>
+        <module>springcloud-consumer-feign</module>
+        <module>springcloud-consumer-hystrix-dashboard</module>
+        <module>springcloud-consumer-ribbon</module>
         <module>springcloud-eureka-node-01</module>
         <module>springcloud-eureka-node-02</module>
         <module>springcloud-eureka-node-03</module>
         <module>springcloud-provider-01</module>
         <module>springcloud-provider-02</module>
         <module>springcloud-provider-03</module>
-        <module>springcloud-consumer-ribbon</module>
-        <module>springcloud-consumer-feign</module>
+        <module>springcloud-provider-hystrix</module>
+        <module>springcloud-zuul</module>
     </modules>
 
     <!--打包方式-->
