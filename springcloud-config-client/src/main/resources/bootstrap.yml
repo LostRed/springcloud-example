@@ -1,0 +1,9 @@
+#系统级的配置
+spring:
+  cloud:
+    config:
+      uri: http://localhost:10010
+      #需要从git上读取的文件名
+      name: config-client
+      profile: dev
+      label: master

@@ -1,0 +1,4 @@
+#Spring的配置
+spring:
+  application:
+    name: springcloud-config-provider #集群应用名保持一致，因为Ribbon通过应用名来访问服务

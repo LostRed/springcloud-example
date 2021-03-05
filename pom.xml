@@ -20,6 +20,10 @@
         <module>springcloud-provider-03</module>
         <module>springcloud-provider-hystrix</module>
         <module>springcloud-zuul</module>
+        <module>springcloud-config-server</module>
+        <module>springcloud-config-client</module>
+        <module>springcloud-config-eureka</module>
+        <module>springcloud-config-provider</module>
     </modules>
 
     <!--打包方式-->
