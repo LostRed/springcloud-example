@@ -6,7 +6,7 @@
 ## 项目模块说明
 
 ```
-springcloud-example   
+springcloud-sample   
 ├── springcloud-api                             // 接口(实体类、暴露的服务API、服务降级)
 ├── springcloud-config-client                   // config客户端案例模块(无实际意义)
 ├── springcloud-config-eureka                   // 注册中心(使用云端config配置)
