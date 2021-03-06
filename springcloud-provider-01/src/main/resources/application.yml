@@ -30,5 +30,5 @@ eureka:
     prefer-ip-address: true
 #info信息
 info:
-  app.name: springcloud-example
+  app.name: springcloud-sample
   company.name: ylz

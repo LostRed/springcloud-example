@@ -14,7 +14,7 @@ eureka:
     prefer-ip-address: true
 
 info:
-  app.name: springcloud-example
+  app.name: springcloud-sample
   company.name: ylz
 
 zuul:
