@@ -1,4 +1,4 @@
-# springcloud-example
+# springcloud-sample
 
 > 本工程为一个SpringCloud的例子，大部分使用了Netflix的组件，供学习使用
 
