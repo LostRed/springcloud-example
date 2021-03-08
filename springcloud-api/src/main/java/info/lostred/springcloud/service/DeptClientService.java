@@ -20,6 +20,6 @@ public interface DeptClientService {
     @GetMapping("/dept/get/{id}")
     Dept queryById(@PathVariable("id") Long id);
 
-    @GetMapping("dept/list")
+    @GetMapping("/dept/list")
     List<Dept> queryAll();
 }
