@@ -2,6 +2,7 @@ package info.lostred.springcloud.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import info.lostred.springcloud.pojo.Dept;
+import info.lostred.springcloud.service.DeptService;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
